@@ -34,7 +34,19 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				max-width: calc(100% - 2em);
 				margin: auto;
 				padding: 1em;
-				color: rgb(var(--gray-dark));
+				color: var(--text-secondary);
+			}
+			.prose :global(h2),
+			.prose :global(h3),
+			.prose :global(h4) {
+				color: var(--text-primary);
+				margin-top: 2em;
+			}
+			.prose :global(a) {
+				color: var(--accent);
+			}
+			.prose :global(a:hover) {
+				text-shadow: 0 0 8px var(--accent-glow);
 			}
 			.title {
 				margin-bottom: 1em;
@@ -44,13 +56,20 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			}
 			.title h1 {
 				margin: 0 0 0.5em 0;
+				font-size: 2.5em;
 			}
 			.date {
 				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
+				color: var(--text-muted);
 			}
 			.last-updated-on {
 				font-style: italic;
+				color: var(--text-muted);
+			}
+			hr {
+				border: none;
+				border-top: 1px solid var(--border-color);
+				margin: 1em 0 2em 0;
 			}
 		</style>
 	</head>
